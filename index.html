@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <form id="password-generator-form" name="password-generator-form">
+        <input name="passwordLength"class="user-input" type="number" placeholder="Length of Password" min="8" max="128"/>
+        <div>
+          <label>special characters</label>
+          <input type="radio" name="special" value="yes" checked/>
+          <label>yes</label>
+          <input type="radio" name="special" value="no"/>
+          <label>no</label>
+        </div>
+        <div>
+          <label>uppercase characters</label>
+          <input type="radio" name="uppercase" value="yes" checked/>
+          <label>yes</label>
+          <input type="radio" name="uppercase" value="no"/>
+          <label>no</label>
+        </div>
+        <div>
+          <label>lowercase characters</label>
+          <input type="radio" name="lowercase" value="yes" checked/>
+          <label>yes</label>
+          <input type="radio" name="lowercase" value="no"/>
+          <label>no</label>
+        </div>
+        <div>
+          <label>Numeric characters</label>
+          <input type="radio" name="numeric" value="yes" checked/>
+          <label>yes</label>
+          <input type="radio" name="numeric" value="no"/>
+          <label>no</label>
+        </div>
+      
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- 
+
+Ask the user a series of questions
+a) length of password (numeric input)
+b) validate length is between 8 and 128.
+c) type of characters to include - special characters, uppercase, lowercase, numeric(series of yes/no confirms)
+d) Validate the user selected at least one character type.
+
+Any invalid response will terminate password generation and the user must start over.
+
+Once the user has entered valid responses, generate a password that meets their criteria and display it in the box.
+  
+-->
